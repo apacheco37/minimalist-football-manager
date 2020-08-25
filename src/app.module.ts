@@ -7,10 +7,10 @@ import { MatchModule } from './match/match.module';
 
 @Module({
   imports: [
-    PlayerModule, 
-    TeamModule, 
-    MatchModule, 
-    TypeOrmModule.forRoot()
+    PlayerModule,
+    TeamModule,
+    MatchModule,
+    TypeOrmModule.forRoot(),
   ],
 })
 export class AppModule {}
