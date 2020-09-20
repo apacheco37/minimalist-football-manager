@@ -12,7 +12,9 @@ export class PlayerService {
   ) { }
 
   getPlayer(id: number): Promise<Player> {
-    return this.playerRepository.findOne(id);
+    return this.playerRepository.findOne(id, {
+      relations: ['Team'],
+    });
   }
 
   getPlayers(): Promise<Player[]> {

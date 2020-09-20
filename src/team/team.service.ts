@@ -12,7 +12,9 @@ export class TeamService {
   ) { }
 
   getTeam(id: number): Promise<Team> {
-    return this.teamRepository.findOne(id);
+    return this.teamRepository.findOne(id, {
+      relations: ['Players'],
+    });
   }
 
   getTeams(): Promise<Team[]> {
