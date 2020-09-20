@@ -18,7 +18,9 @@ export class TeamService {
   }
 
   getTeams(): Promise<Team[]> {
-    return this.teamRepository.find();
+    return this.teamRepository.find({
+      relations: ['Players'],
+    });
   }
 
   createTeam(team: Team): Promise<Team> {

@@ -18,7 +18,9 @@ export class PlayerService {
   }
 
   getPlayers(): Promise<Player[]> {
-    return this.playerRepository.find();
+    return this.playerRepository.find({
+      relations: ['Team'],
+    });
   }
 
   createPlayer(player: Player): Promise<Player> {
