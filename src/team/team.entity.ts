@@ -10,6 +10,7 @@ export class Team {
   @Column()
   Name: string;
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   @OneToMany(type => Player, player => player.Team)
   Players: Player[];
 }
