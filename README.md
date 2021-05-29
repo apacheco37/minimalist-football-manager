@@ -13,7 +13,7 @@ $ npm install
 
 ```bash
 # development
-$ npm run start
+$ npm run starta
 
 # watch mode
 $ npm run start:dev
