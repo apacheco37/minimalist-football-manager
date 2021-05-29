@@ -35,6 +35,7 @@ export class Player {
   @Column()
   Position: Position;
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   @ManyToOne(type => Team, team => team.Players)
   Team: Team;
 }

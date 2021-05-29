@@ -28,7 +28,7 @@ export class TeamController {
   }
 
   @Delete(':id')
-  deleteTeam(@Param('id') id: number) {
+  deleteTeam(@Param('id') id: number): Promise<Team> {
     return this.teamService.deleteTeam(id);
   }
 }

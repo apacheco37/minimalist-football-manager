@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Put, Delete, Query, Param, Body } from '@nestjs/common';
+import { Controller, Get, Post, Put, Delete, Param, Body } from '@nestjs/common';
 
 import { PlayerService } from './player.service';
 import { Player } from './player.entity';
@@ -28,7 +28,7 @@ export class PlayerController {
   }
 
   @Delete(':id')
-  deletePlayer(@Param('id') id: number) {
+  deletePlayer(@Param('id') id: number): Promise<Player> {
     return this.playerService.deletePlayer(id);
   }
 }
