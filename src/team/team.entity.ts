@@ -5,12 +5,12 @@ import { Player } from 'src/player/player.entity';
 @Entity()
 export class Team {
   @PrimaryGeneratedColumn()
-  Id: number;
+  id: number;
 
   @Column()
-  Name: string;
+  name: string;
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  @OneToMany(type => Player, player => player.Team)
-  Players: Player[];
+  @OneToMany(type => Player, player => player.team)
+  players: Player[];
 }

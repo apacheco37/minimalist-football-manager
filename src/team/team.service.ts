@@ -13,13 +13,13 @@ export class TeamService {
 
   getTeam(id: number): Promise<Team> {
     return this.teamRepository.findOne(id, {
-      relations: ['Players'],
+      relations: ['players'],
     });
   }
 
   getTeams(): Promise<Team[]> {
     return this.teamRepository.find({
-      relations: ['Players'],
+      relations: ['players'],
     });
   }
 
@@ -28,7 +28,7 @@ export class TeamService {
   }
 
   updateTeam(team: Team): Promise<Team> {
-    const teamInDb = this.getTeam(team.Id);
+    const teamInDb = this.getTeam(team.id);
     if (teamInDb) {
       return this.teamRepository.save(team);
     }

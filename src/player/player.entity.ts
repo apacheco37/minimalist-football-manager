@@ -18,24 +18,24 @@ enum Position {
 @Entity()
 export class Player {
   @PrimaryGeneratedColumn()
-  Id: number;
+  id: number;
 
   @Column()
-  FirstName: string;
+  firstName: string;
 
   @Column()
-  LastName: string;
+  lastName: string;
 
   @Column()
-  Age: number;
+  age: number;
 
   @Column()
-  Skill: number;
+  skill: number;
 
   @Column()
-  Position: Position;
+  position: Position;
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  @ManyToOne(type => Team, team => team.Players)
-  Team: Team;
+  @ManyToOne(type => Team, team => team.players)
+  team: Team;
 }

@@ -13,13 +13,13 @@ export class PlayerService {
 
   getPlayer(id: number): Promise<Player> {
     return this.playerRepository.findOne(id, {
-      relations: ['Team'],
+      relations: ['team'],
     });
   }
 
   getPlayers(): Promise<Player[]> {
     return this.playerRepository.find({
-      relations: ['Team'],
+      relations: ['team'],
     });
   }
 
@@ -28,7 +28,7 @@ export class PlayerService {
   }
 
   updatePlayer(player: Player): Promise<Player> {
-    const playerInDb = this.getPlayer(player.Id);
+    const playerInDb = this.getPlayer(player.id);
     if (playerInDb) {
       return this.playerRepository.save(player);
     }
